@@ -1,0 +1,29 @@
+.header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 64px;
+  color: #fff;
+  background-color: #1976d2;
+  box-shadow: 0 2px 5px #0000004d;
+
+  .content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.main-container {
+  width: 100%;
+  margin-top: 64px;
+  padding-block: 16px;
+}
+
+.content {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}

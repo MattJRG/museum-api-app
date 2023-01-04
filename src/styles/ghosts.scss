@@ -1,0 +1,52 @@
+.ghost {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    display: inline-block;
+  }
+}
+
+@mixin ghost($width: 0, $height: 0, $top: 0, $bottom: 0, $isAlternate: false) {
+  @if ($width > 0) {
+    width: $width;
+  }
+
+  @if ($height > 0) {
+    height: $height;
+  }
+
+  @if ($top > 0) {
+    position: relative;
+    top: $top;
+  }
+
+  @if ($bottom > 0) {
+    position: relative;
+    bottom: $bottom;
+  }
+
+  @if ($isAlternate) {
+    background-color: #f0f0f0;
+  } @else {
+    background-color: #e8e8e8;
+  }
+
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+
+  color: transparent;
+}
+
+@mixin ghostLine($width: 0, $height: 0, $top: 0, $bottom: 0, $isAlternate: false) {
+  @include ghost($width, $height, $top, $bottom, $isAlternate);
+  white-space: nowrap;
+
+  &:after {
+    content: 'G';
+  }
+}

@@ -1,0 +1,45 @@
+<div [class.ghost]="!department.displayName">
+  <h2>{{ department.displayName }}</h2>
+
+  <div class="wrapper">
+    <ng-container [ngSwitch]="currentCarouselState">
+      <!-- Carousel Ready to render -->
+      <ng-container *ngSwitchCase="carouselState.READY">
+        <swiper #swiperRef
+          [slidesPerView]="slidesPerView"
+          [spaceBetween]="24"
+          [navigation]="navigation"
+          [virtual]="true">
+
+          <ng-template *ngFor="let id of objectIds$ | async"
+            swiperSlide>
+            <carousel-item [id]="id">
+            </carousel-item>
+          </ng-template>
+        </swiper>
+
+        <div [id]="prevSlideId"
+          class="swiper-button-prev">
+        </div>
+
+        <div [id]="nextSlideId"
+          class="swiper-button-next">
+        </div>
+      </ng-container>
+
+      <!-- Carousel Empty -->
+      <ng-container *ngSwitchCase="carouselState.EMPTY">
+        <div class="no-carousel">
+          <div>No results</div>
+        </div>
+      </ng-container>
+
+      <!-- Carousel loading -->
+      <ng-container *ngSwitchCase="carouselState.LOADING">
+        <div class="no-carousel">
+          <spinner></spinner>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

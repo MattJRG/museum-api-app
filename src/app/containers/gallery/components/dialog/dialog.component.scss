@@ -1,0 +1,28 @@
+:host {
+  padding: 16px;
+
+  .dialog-content {
+    h2 {
+      margin-bottom: 16px;
+    }
+
+    .img-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+
+      img {
+        max-width: 500px;
+        max-height: 500px;
+      }
+    }
+
+    .details {
+      font-size: 16px;
+
+      .art {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

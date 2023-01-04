@@ -1,0 +1,89 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+// All form tags need to inherit font-family
+input, textarea, label, select, option, optgroup, fieldset, button {
+  font-family: inherit;
+}
+
+button {
+  padding: 0;
+  background: none;
+  border: none;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ol {
+  margin: 0;
+  // 20px left padding to allow the numbers to be displayed
+  padding: 0 0 0 20px;
+
+  li {
+    margin-bottom: 4px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+iframe {
+  border: none;
+}
+
+svg {
+  width: auto;
+  height: auto;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+// hidden attribute is an HTML global attribute https://www.w3schools.com/tags/att_global_hidden.asp,
+// but if we have a class we another display on it the HTML global attribute css get overridden
+[hidden] {
+  display: none !important;
+}

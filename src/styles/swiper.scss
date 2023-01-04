@@ -1,0 +1,9 @@
+@use '../../node_modules/swiper/swiper.min.css';
+@use '../../node_modules/swiper/modules/navigation/navigation.min.css';
+
+.swiper-slide {
+  line-height: 100px;
+  text-align: center;
+  color: #000;
+  border-radius: 4px;
+}

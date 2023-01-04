@@ -1,0 +1,19 @@
+<div class="item"
+  [class.ghost]="!objectData.title"
+  [class.unavailable]="objectData.title === unavailable"
+  (click)="openObjectDialog()">
+  <div class="img-wrapper">
+    <img *ngIf="objectData?.title; else ghostImg"
+      [src]="ghostImage"
+      [lazyLoad]="objectData.primaryImageSmall || ''"
+      alt="">
+  </div>
+
+  <ng-template #ghostImg>
+    <div class="img"></div>
+  </ng-template>
+
+  <div class="title-wrapper">
+    <div class="title">{{ objectData.title | truncate: 35 }}</div>
+  </div>
+</div>

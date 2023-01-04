@@ -1,0 +1,29 @@
+<div class="dialog-content">
+  <h2>{{ museumObject.title }}</h2>
+
+  <div *ngIf="museumObject.primaryImage"
+    class="img-wrapper">
+    <img [src]="museumObject.primaryImage"
+      alt="">
+  </div>
+
+  <div class="details">
+    <div class="art">
+      <div>Repository: {{ museumObject.repository || 'Unknown'}}</div>
+      <div>Medium: {{ museumObject.medium || 'Unknown'}}</div>
+      <div>Date: {{ museumObject.objectDate || 'Unknown'}}</div>
+    </div>
+
+    <div class="artist">
+      <div>Artist: {{ museumObject.artistDisplayName || 'Unknown' }}
+        <span *ngIf="museumObject.artistBeginDate || museumObject.artistEndDate">({{ museumObject.artistBeginDate }}
+          <span *ngIf="museumObject.artistBeginDate && museumObject.artistEndDate"> - </span> {{ museumObject.artistEndDate }}
+          )</span>
+      </div>
+
+      <div>Nationality: {{ museumObject.artistNationality || 'Unknown' }}</div>
+      <div *ngIf="museumObject.artistDisplayBio">Display Bio: {{ museumObject.artistDisplayBio }}</div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,69 @@
+@use 'ghosts';
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.item {
+  height: 100%;
+  background-color: #fafafa;
+  display: block;
+
+  &:not(.unavailable) {
+    cursor: pointer;
+    &:hover {
+      .img-wrapper {
+        background-color: #eeeeee;
+      }
+      .title-wrapper {
+        background-color: #dcdcdc;
+      }
+    }
+  }
+
+
+  .img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+
+    img {
+      width: auto;
+      max-width: 70%;
+      height: auto;
+      max-height: 70%;
+    }
+  }
+
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    background-color: #f0f0f0;
+
+    .title {
+      margin: 16px;
+      line-height: 20px;
+      font-size: 16px;
+      overflow: hidden;
+    }
+  }
+}
+
+// GHOSTS
+.ghost.item {
+  .btn-wrapper {
+    button {
+      @include ghosts.ghostLine(65%);
+    }
+  }
+
+  .img-wrapper {
+    .img {
+      @include ghosts.ghost(120px, 120px);
+    }
+  }
+}

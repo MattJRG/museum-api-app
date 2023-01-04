@@ -1,0 +1,28 @@
+<div infinite-scroll
+  [infiniteScrollThrottle]="0"
+  (scrolled)="onScroll()">
+
+  <div class="input-section">
+    <label for="search"
+      class="sr-only">Search artwork
+    </label>
+
+    <div class="wrapper">
+      <span>
+        <fa-icon [icon]="searchIcon"></fa-icon>
+      </span>
+
+      <input id="search"
+        placeholder="Search artwork"
+        type="text"
+        [formControl]="searchFormControl">
+    </div>
+  </div>
+
+  <div class="carousel-section">
+    <carousel *ngFor="let department of departments"
+      [department]="department"
+      [searchTerm]="searchTerm">
+    </carousel>
+  </div>
+</div>

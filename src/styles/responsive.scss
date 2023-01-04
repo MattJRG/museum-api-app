@@ -1,0 +1,32 @@
+// Breakpoints
+$breakpoint-xxs: 360px;
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1260px;
+$breakpoint-ml: 1440px;
+$breakpoints-map: (
+  xxs: $breakpoint-xxs,
+  xs: $breakpoint-xs,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  ml: $breakpoint-ml,
+) !default;
+// For looping
+$breakpoint-keys: map_keys($breakpoints-map);
+
+// Create media breakpoints
+@mixin media-lt($key) {
+  $max: map-get($breakpoints-map, $key) - 0.02px;
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin media-gt($key) {
+  $min: map-get($breakpoints-map, $key);
+  @media (min-width: $min) {
+    @content;
+  }
+}

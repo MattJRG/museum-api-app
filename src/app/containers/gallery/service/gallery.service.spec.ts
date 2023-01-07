@@ -1,6 +1,5 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { createHttpFactory, HttpMethod, SpectatorHttp } from '@ngneat/spectator';
-import { MuseumObject } from '../models/gallery.model';
 import { BASE_API_ENDPOINT, GalleryService } from './gallery.service';
 
 describe('Gallery Service', () => {
